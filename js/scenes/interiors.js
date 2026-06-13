@@ -17,7 +17,7 @@ export const INTERIOR_CRYSTAL = {
     build() {
         return `
         <div class="interior-container"
-             style="background-image: url('../Assets/Interior/CrystalSpires/bg.png');">
+             style="background-image: url('Assets/Interior/CrystalSpires/bg.png');">
 
             <div id="closeInterior" class="close-btn">X</div>
 
@@ -28,14 +28,14 @@ export const INTERIOR_CRYSTAL = {
 
             <div class="sprite-wrapper sprite-bottom-left"
                  style="animation:float 10s ease-in-out infinite;">
-                <img src="../Assets/Interior/CrystalSpires/archmage.png"
+                <img src="Assets/Interior/CrystalSpires/archmage.png"
                      class="sprite-img" style="image-rendering:pixelated;">
                 <div id="anchor-interior"
                      style="position:absolute; top:12%; left:12%;"></div>
             </div>
 
             <div class="scroll-panel">
-                <img src="../Assets/Interior/CrystalSpires/scroll.png"
+                <img src="Assets/Interior/CrystalSpires/scroll.png"
                      class="scroll-bg-img" alt="">
                 <div class="scroll-content">
                     <h2 class="scroll-title">THE ARCHIVES</h2>
@@ -108,13 +108,13 @@ export const INTERIOR_CRYSTAL = {
 export const INTERIOR_CALDERA = {
     build() {
         return buildInteriorHTML({
-            bgImage     : '../Assets/Interior/IronCaldera/bg.png',
+            bgImage     : 'Assets/Interior/IronCaldera/bg.png',
             canvasId    : 'interiorCanvas',
             canvasZIndex: 2,
             dialogText  : '"Demir ateşle, kod sabırla dövülür... Atölyeye hoş geldin."',
             spriteContent: `
                 <div class="sprite-wrapper sprite-bottom-right">
-                    <img src="../Assets/Interior/IronCaldera/blacksmith.png"
+                    <img src="Assets/Interior/IronCaldera/blacksmith.png"
                          class="sprite-img" style="image-rendering:pixelated;">
                     <div id="anchor-interior"
                          style="position:absolute; top:60%; left:60%;
@@ -154,7 +154,7 @@ export const INTERIOR_CALDERA = {
 export const INTERIOR_VAULT = {
     build() {
         return buildInteriorHTML({
-            bgImage     : '../Assets/Interior/ForgottenVault/bg.png',
+            bgImage     : 'Assets/Interior/ForgottenVault/bg.png',
             canvasId    : 'interiorCanvas',
             canvasZIndex: 2,
             dialogText  : '"Unutulmuş düşünceler ve eski arşivler... The Forgotten Vault\'a hoş geldin."',
@@ -162,10 +162,10 @@ export const INTERIOR_VAULT = {
                 <div style="position:absolute; bottom:5vh; left:50%;
                             transform:translateX(-50%);
                             width:60vw; max-width:700px; z-index:4;">
-                    <img src="../Assets/Interior/ForgottenVault/table.png"
+                    <img src="Assets/Interior/ForgottenVault/table.png"
                          style="width:100%; display:block;
                                 mix-blend-mode:screen; image-rendering:pixelated;">
-                    <img src="../Assets/Interior/ForgottenVault/scrollpile.png"
+                    <img src="Assets/Interior/ForgottenVault/scrollpile.png"
                          style="position:absolute; top:-40%; left:15%; width:70%;
                                 mix-blend-mode:screen; image-rendering:pixelated;
                                 animation:float 6s ease-in-out infinite;">
@@ -211,13 +211,13 @@ export const INTERIOR_VAULT = {
 export const INTERIOR_GROVE = {
     build() {
         return buildInteriorHTML({
-            bgImage     : '../Assets/Interior/SilverGrove/bg.png',
+            bgImage     : 'Assets/Interior/SilverGrove/bg.png',
             canvasId    : 'interiorCanvas',
             canvasZIndex: 2,
             dialogText  : '"Doğanın fısıltısı, kodun sessizliğinde saklıdır... Koruluğa hoş geldin."',
             spriteContent: `
                 <div class="sprite-wrapper sprite-bottom-left developer">
-                    <img src="../Assets/Interior/SilverGrove/developer.png"
+                    <img src="Assets/Interior/SilverGrove/developer.png"
                          class="sprite-img developer" style="image-rendering:pixelated;">
                     <div id="anchor-interior"
                          style="position:absolute; top:30%; left:50%;
