@@ -1,0 +1,109 @@
+/* ============================================================
+   OXARA'S DOMAIN — scroll-panel.css
+   Crystal Spires parşömen paneli ve handbook link listesi.
+   ============================================================ */
+
+/*
+ * Parşömen sarmalayıcı.
+ * 447×558 px görselin en-boy oranı ~0.801; yükseklik = genişlik × 1.248.
+ */
+.scroll-panel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(390px, 42vw);
+    height: calc(min(390px, 42vw) * 1.248);
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Parşömen arka plan görseli */
+.scroll-bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    image-rendering: pixelated;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Parşömen içindeki metin alanı */
+.scroll-content {
+    position: relative;
+    z-index: 1;
+    width: 72%;
+    padding: 18% 0 16%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+/* "THE ARCHIVES" başlık */
+.scroll-title {
+    font-family: var(--font-pixel);
+    font-size: clamp(0.55rem, 1.2vw, 0.8rem);
+    color: var(--color-ink-light);
+    text-shadow: 1px 1px 0 rgba(255, 220, 120, 0.4);
+    margin: 0 0 4px;
+    letter-spacing: 0.05em;
+    text-align: center;
+}
+
+/* Alt yazı */
+.scroll-subtitle {
+    font-family: var(--font-mono);
+    font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+    color: var(--color-ink-mid);
+    margin: 0 0 14px;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+
+/* Handbook link listesi */
+.handbook-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Her handbook linki */
+.handbook-link {
+    display: block;
+    font-family: var(--font-pixel);
+    font-size: clamp(0.42rem, 0.9vw, 0.60rem);
+    color: var(--color-ink-base);
+    text-decoration: none;
+    padding: 6px 4px;
+    border: none;
+    border-bottom: 1px solid rgba(90, 50, 10, 0.18);
+    background: transparent;
+    transition:
+        color       0.25s ease,
+        text-shadow 0.25s ease;
+    line-height: 1.7;
+}
+
+/* Hover: mürekkep yanma efekti */
+.handbook-link:hover {
+    color: var(--color-ink-dark);
+    text-shadow:
+        0  1px 0   rgba(80,  30,  0, 0.9),
+        0 -1px 0   rgba(80,  30,  0, 0.5),
+        0  0   4px rgba(40,  10,  0, 0.8),
+        0  0   8px rgba(120, 50,  0, 0.4);
+}
+
+.handbook-link:active {
+    color: #000;
+    text-shadow: 0 1px 0 rgba(60, 20, 0, 0.9);
+}

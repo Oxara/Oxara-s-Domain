@@ -1,0 +1,131 @@
+/* ============================================================
+   OXARA'S DOMAIN — map.css
+   Dünya haritası, bölge hotspot'ları, partikül anchor'lar ve tooltip.
+   ============================================================ */
+
+/* --- Harita bölümü --- */
+.map-section {
+    position: relative;
+    width: 100vw;
+    background-color: var(--color-bg-deep);
+    z-index: var(--z-bg);
+    margin-top: -30vh;
+    padding-top: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Harita görseli */
+.overworld-map {
+    width: 100%;
+    height: 100%;
+    background-image: url('../Assets/Domain/worldmap.png');
+    background-size: cover;
+    background-position: center center;
+    image-rendering: pixelated;
+    filter: brightness(0.85);
+    transition: filter var(--dur-slow) ease;
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent       0%,
+        rgba(0,0,0,0.3)   15%,
+        rgba(0,0,0,0.75)  28%,
+        black             40%
+    );
+    mask-image: linear-gradient(
+        to bottom,
+        transparent       0%,
+        rgba(0,0,0,0.3)   15%,
+        rgba(0,0,0,0.75)  28%,
+        black             40%
+    );
+}
+
+/* Herhangi bir bölgeye hover yapıldığında harita parlar */
+.map-container:has(.region-hotspot:hover) .overworld-map {
+    filter: brightness(1.1) contrast(1.1);
+}
+
+/* --- Hotspot'lar --- */
+.region-hotspot {
+    position: absolute;
+    border-radius: 40%;
+    z-index: var(--z-map);
+}
+
+/* Bölge koordinatları */
+.crystal-spires  { top: 5%;  left: 8%;  width: 35%; height: 45%; }
+.iron-caldera    { top: 5%;  left: 50%; width: 45%; height: 45%; }
+.forgotten-vault { top: 50%; left: 15%; width: 30%; height: 40%; }
+.silver-grove    { top: 55%; left: 55%; width: 25%; height: 25%; }
+
+/* --- Bölge highlight & partikül --- */
+.region-highlight {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1.0s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+.region-hotspot:hover .region-highlight { opacity: 1; }
+
+.region-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.particle-anchor {
+    position: absolute;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+/* --- Tooltip --- */
+.map-tooltip {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    max-width: 260px;
+    background: rgba(18, 18, 28, 0.95);
+    border: 2px solid var(--color-border-muted);
+    padding: 15px 20px;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all var(--dur-normal) ease;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    z-index: var(--z-tooltip);
+}
+
+.map-tooltip.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.map-tooltip h3 {
+    font-family: var(--font-pixel);
+    color: var(--color-text-accent);
+    font-size: 1rem;
+    margin: 0 0 10px 0;
+    text-shadow: 2px 2px 0px #000;
+}
+
+.map-tooltip p {
+    font-family: var(--font-mono);
+    color: var(--color-text-primary);
+    font-size: 1.5rem;
+    margin: 0;
+}

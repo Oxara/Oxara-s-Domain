@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oxara's Domain</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- GİRİŞ EKRANI -->
+    <section class="title-screen" id="titleScreen">
+        <div class="layer bg-layer" id="bgLayer"></div>
+        <canvas id="starCanvas"></canvas>
+        <div class="layer text-layer" id="textLayer">
+            <h1 class="logo-title">OXARA'S DOMAIN</h1>
+            <p class="blink-start">> SCROLL TO EXPLORE &lt;</p>
+        </div>
+    </section>
+
+    <!-- DÜNYA HARİTASI -->
+    <section class="map-section" id="mapSection">
+        <div class="map-container">
+
+            <div class="overworld-map"></div>
+
+            <!-- BÖLGE 1: Crystal Spires -->
+            <div class="region-hotspot crystal-spires"
+                 data-title="The Crystal Spires"
+                 data-desc="Library & Handbooks">
+                <div class="particle-anchor" id="anchor-crystal" style="top:40%; left:50%;"></div>
+                <div class="region-highlight"></div>
+                <canvas class="region-canvas" id="crystalCanvas"></canvas>
+            </div>
+
+            <!-- BÖLGE 2: Iron Caldera -->
+            <div class="region-hotspot iron-caldera"
+                 data-title="The Iron Caldera"
+                 data-desc="Workshop & Packages">
+                <div class="particle-anchor" id="anchor-caldera" style="top:50%; left:50%;"></div>
+                <div class="region-highlight"></div>
+                <canvas class="region-canvas" id="calderaCanvas"></canvas>
+            </div>
+
+            <!-- BÖLGE 3: Forgotten Vault -->
+            <div class="region-hotspot forgotten-vault"
+                 data-title="The Forgotten Vault"
+                 data-desc="Archives & Thoughts">
+                <div class="particle-anchor" id="anchor-vault" style="top:50%; left:50%;"></div>
+                <div class="region-highlight"></div>
+                <canvas class="region-canvas" id="vaultCanvas"></canvas>
+            </div>
+
+            <!-- BÖLGE 4: Silver Grove -->
+            <div class="region-hotspot silver-grove"
+                 data-title="The Silver Grove"
+                 data-desc="About & Contact">
+                <div class="particle-anchor" id="anchor-tree" style="top:50%; left:38%;"></div>
+                <div class="region-highlight"></div>
+                <canvas class="region-canvas" id="fireflyCanvas"></canvas>
+            </div>
+
+        </div>
+
+        <!-- Tooltip -->
+        <div class="map-tooltip" id="mapTooltip">
+            <h3 id="tooltipTitle">Region Name</h3>
+            <p id="tooltipDesc">Description text goes here.</p>
+        </div>
+
+        <!-- Portal geçiş perdesi -->
+        <div id="portalOverlay" style="
+            position: fixed; top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: black; opacity: 0;
+            pointer-events: none; z-index: 9999;
+            transition: opacity 1s ease;
+        "></div>
+    </section>
+
+    <!-- İÇ MEKANLARIN YÜKLENECEĞİ BÖLÜM -->
+    <section id="interiorSection" style="
+        display: none; width: 100vw; height: 100vh;
+        position: relative; background-color: #04050a;
+    "></section>
+
+    <!-- type="module" → ES modül sistemi, import/export desteği -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>

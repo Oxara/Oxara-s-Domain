@@ -1,0 +1,27 @@
+/* ============================================================
+   OXARA'S DOMAIN — base.css
+   Reset, body ve global cursor tanımları.
+   ============================================================ */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: var(--color-bg-base);
+    cursor: var(--cursor-idle);
+}
+
+/* Tıklanabilir tüm elemanlar — işaret parmağı */
+a,
+button,
+[role="button"],
+.region-hotspot,
+.handbook-link,
+.close-btn,
+.scroll-panel,
+input[type="range"],
+input[type="checkbox"],
+label[for],
+.node {
+    cursor: var(--cursor-pointer);
+}

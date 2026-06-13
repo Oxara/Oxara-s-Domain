@@ -1,0 +1,51 @@
+/* ============================================================
+   OXARA'S DOMAIN — tokens.css
+   Tüm tasarım sabitleri tek yerden yönetilir.
+   Renk, tipografi, z-index ve animasyon süreleri buradan gelir.
+   ============================================================ */
+
+:root {
+    /* --- Renkler --- */
+    --color-bg-deep:     #04050a;
+    --color-bg-base:     #12121c;
+    --color-border-muted:#4a4a6a;
+
+    --color-text-primary: #e0e0e0;
+    --color-text-accent:  #00ffff;
+    --color-text-warn:    #ff4444;
+
+    --color-ink-dark:   #1a0800;
+    --color-ink-base:   #3a1e06;
+    --color-ink-mid:    #5a3a18;
+    --color-ink-light:  #2a1a08;
+
+    --color-glow-cyan:  rgba(0, 255, 255, 0.6);
+    --color-glow-amber: rgba(255, 200, 80, 0.8);
+
+    /* --- Tipografi --- */
+    --font-pixel:  'Press Start 2P', cursive;
+    --font-mono:   'VT323', monospace;
+
+    /* --- Z-index katmanları --- */
+    --z-bg:         1;
+    --z-stars:      2;
+    --z-text:       2;
+    --z-map:        10;
+    --z-tooltip:    20;
+    --z-sprite:     4;
+    --z-canvas:     5;
+    --z-dialog:     10;
+    --z-interior:   50;
+    --z-overlay:    100;
+    --z-portal:     9999;
+
+    /* --- Geçiş süreleri --- */
+    --dur-fast:   0.2s;
+    --dur-normal: 0.3s;
+    --dur-slow:   0.5s;
+    --dur-portal: 1.0s;
+
+    /* --- Cursor --- */
+    --cursor-idle:    url('../Assets/Cursor/gauntlet-idle.png') 66 7, default;
+    --cursor-pointer: url('../Assets/Cursor/gauntlet-pointer.png') 89 8, pointer;
+}

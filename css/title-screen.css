@@ -1,0 +1,96 @@
+/* ============================================================
+   OXARA'S DOMAIN — title-screen.css
+   Giriş ekranı: parallax arka plan, metin katmanı, yıldız canvas.
+   ============================================================ */
+
+.title-screen {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: var(--z-text);
+}
+
+/* Alt kısmı harita arka plan rengine eritir */
+.title-screen::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 45vh;
+    background: linear-gradient(
+        to bottom,
+        rgba(4, 5, 10, 0)   0%,
+        rgba(4, 5, 10, 0)   35%,
+        rgba(4, 5, 10, 0.5) 65%,
+        rgba(4, 5, 10, 1)   100%
+    );
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* Katmanların ortak özelliği */
+.layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+}
+
+/* Arka plan görseli */
+.bg-layer {
+    background-image: url('../Assets/Domain/openingScene.png');
+    background-size: cover;
+    background-position: center bottom;
+    image-rendering: pixelated;
+    height: 120%;
+    z-index: var(--z-bg);
+    filter: brightness(1.25);
+}
+
+/* Yazı katmanı */
+.text-layer {
+    z-index: var(--z-text);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 15vh;
+    padding-left: 10vw;
+}
+
+/* Başlık */
+.logo-title {
+    font-family: var(--font-pixel);
+    color: var(--color-text-primary);
+    font-size: 3rem;
+    text-shadow: 4px 4px 0px var(--color-bg-base), 0 0 15px var(--color-glow-cyan);
+    margin-bottom: 20px;
+}
+
+/* Yanıp sönen "SCROLL TO EXPLORE" */
+.blink-start {
+    font-family: var(--font-pixel);
+    color: var(--color-text-accent);
+    font-size: 1rem;
+    animation: blinker 1.5s linear infinite;
+    text-shadow: 2px 2px 0px var(--color-bg-base);
+}
+
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+/* Kayan yıldız canvas */
+#starCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: var(--z-stars);
+    pointer-events: none;
+}

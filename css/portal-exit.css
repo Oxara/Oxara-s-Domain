@@ -1,0 +1,77 @@
+/* ============================================================
+   OXARA'S DOMAIN — portal-exit.css
+   Handbook linkine tıklandığında görünen tam ekran çıkış mesajı.
+   ============================================================ */
+
+.portal-exit-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(4, 3, 10, 0.0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--z-overlay);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity var(--dur-slow) ease, background 0.8s ease;
+}
+
+.portal-exit-overlay.visible {
+    opacity: 1;
+    background: rgba(4, 3, 10, 0.88);
+    pointer-events: all;
+    animation: portalPulse 1.8s ease-in-out;
+}
+
+@keyframes portalPulse {
+    0%   { background: rgba(4, 3, 10, 0.0);  }
+    30%  { background: rgba(20, 5, 40, 0.7); }
+    60%  { background: rgba(60, 10, 90, 0.5);}
+    100% { background: rgba(4, 3, 10, 0.88); }
+}
+
+.portal-exit-box {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    animation: portalTextReveal 0.6s ease forwards;
+}
+
+@keyframes portalTextReveal {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.portal-exit-line1 {
+    font-family: var(--font-mono);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    color: #a07040;
+    margin: 0;
+    letter-spacing: 0.08em;
+}
+
+.portal-exit-line2 {
+    font-family: var(--font-pixel);
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    color: #e0c070;
+    margin: 0;
+    text-shadow:
+        0 0 12px var(--color-glow-amber),
+        0 0 30px rgba(255, 160, 0, 0.4);
+    animation: nameGlow 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes nameGlow {
+    from { text-shadow: 0 0 10px rgba(255,200,80,0.6), 0 0 25px rgba(200,120,0,0.3); }
+    to   { text-shadow: 0 0 20px rgba(255,220,100,1),  0 0 50px rgba(255,160,0,0.6); }
+}
+
+.portal-exit-line3 {
+    font-family: var(--font-pixel);
+    font-size: clamp(0.5rem, 1.2vw, 0.75rem);
+    color: #8855cc;
+    margin: 0;
+    letter-spacing: 0.15em;
+    animation: blinker 0.8s linear infinite;
+}

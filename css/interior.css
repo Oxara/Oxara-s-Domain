@@ -1,0 +1,133 @@
+/* ============================================================
+   OXARA'S DOMAIN — interior.css
+   İç mekan sahnesi: arka plan container, sprite entegrasyon
+   maskeleri, dialog kutusu ve kapatma butonu.
+   ============================================================ */
+
+/* --- İç mekan sahnesi --- */
+.interior-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Zemin gölgesi — tüm spriteları aynı perspektife sokar */
+.interior-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(
+        to top,
+        rgba(4, 3, 8, 0.55) 0%,
+        rgba(4, 3, 8, 0.20) 55%,
+        transparent         100%
+    );
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* --- Sprite sarmalayıcı --- */
+.sprite-wrapper {
+    position: absolute;
+    z-index: var(--z-sprite);
+}
+
+/*
+ * Çok yönlü kenar maskesi — iki gradient, intersect modda çarpışır.
+ * Sol köşe: alt + sağ kenar söndürülür.
+ */
+.sprite-bottom-left {
+    bottom: -4vw;
+    left:   -3vw;
+    height: 80vh;
+    -webkit-mask-image:
+        linear-gradient(to top,  transparent 0%, rgba(0,0,0,0.5) 7%,  black 14%),
+        linear-gradient(to left, transparent 0%, rgba(0,0,0,0.6) 5%,  black 10%);
+    -webkit-mask-composite: destination-in;
+    mask-image:
+        linear-gradient(to top,  transparent 0%, rgba(0,0,0,0.5) 7%,  black 14%),
+        linear-gradient(to left, transparent 0%, rgba(0,0,0,0.6) 5%,  black 10%);
+    mask-composite: intersect;
+}
+
+/* Sağ köşe: alt + sol kenar söndürülür */
+.sprite-bottom-right {
+    bottom: 0;
+    right:  4vw;
+    height: 75vh;
+    -webkit-mask-image:
+        linear-gradient(to top,   transparent 0%, rgba(0,0,0,0.4) 8%,  black 18%),
+        linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 12%, black 28%);
+    -webkit-mask-composite: destination-in;
+    mask-image:
+        linear-gradient(to top,   transparent 0%, rgba(0,0,0,0.4) 8%,  black 18%),
+        linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 12%, black 28%);
+    mask-composite: intersect;
+}
+
+/*
+ * Sprite görseli: minimal ışık uyumu.
+ * Asıl entegrasyonu mask-image üstlenir; filtreler yalnızca
+ * arka planın sıcak mum ışığı tonuna hafif bir yaklaşım sağlar.
+ */
+.sprite-img {
+    height: 100%;
+    display: block;
+    filter: saturate(0.90) sepia(0.08);
+}
+
+/* Developer sprite özel konumlandırması */
+.developer {
+    height: 70%;
+    bottom: -18vw !important;
+    left:   -5vw  !important;
+}
+
+/* Float animasyonu — sprite ve özel elementlerde kullanılır */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-20px); }
+}
+
+/* --- Dialog kutusu --- */
+.dialog-box {
+    position: absolute;
+    bottom: 50px;
+    background: rgba(18, 18, 28, 0.9);
+    border: 3px solid #6a4a6a;
+    padding: 20px;
+    font-family: var(--font-pixel);
+    color: white;
+    z-index: var(--z-dialog);
+}
+
+/* --- Kapatma butonu --- */
+.close-btn {
+    position: absolute;
+    padding: 20px;
+    top: 40px;
+    right: 50px;
+    font-family: var(--font-pixel);
+    color: var(--color-text-primary);
+    font-size: 2rem;
+    cursor: var(--cursor-idle);
+    z-index: var(--z-interior);
+    text-shadow: 3px 3px 0px #000;
+    transition:
+        color     var(--dur-fast) ease,
+        transform var(--dur-fast) ease;
+}
+
+.close-btn:hover {
+    color: var(--color-text-warn);
+    transform: scale(1.1);
+    cursor: var(--cursor-pointer);
+}

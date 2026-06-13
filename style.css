@@ -1,0 +1,20 @@
+/* ============================================================
+   OXARA'S DOMAIN — style.css  (ana giriş noktası)
+
+   Bileşen sırası:
+     1. tokens      — CSS değişkenleri (renkler, font, z-index, süreler)
+     2. base        — Reset, body, cursor
+     3. title-screen— Giriş ekranı parallax katmanları
+     4. map         — Dünya haritası, hotspot'lar, tooltip
+     5. interior    — İç mekan sahne, sprite maskeleri, dialog
+     6. scroll-panel— Parşömen paneli ve handbook listesi
+     7. portal-exit — Handbook çıkış animasyonu
+   ============================================================ */
+
+@import url('css/tokens.css');
+@import url('css/base.css');
+@import url('css/title-screen.css');
+@import url('css/map.css');
+@import url('css/interior.css');
+@import url('css/scroll-panel.css');
+@import url('css/portal-exit.css');
