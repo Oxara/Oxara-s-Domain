@@ -17,7 +17,7 @@ oxara/
 │
 ├── css/
 │   ├── tokens.css           ← Tüm CSS değişkenleri BURADA; başka yere yazma
-│   ├── base.css             ← Reset ve cursor
+│   ├── base.css             ← Reset
 │   ├── title-screen.css     ← Sadece giriş ekranı
 │   ├── map.css              ← Sadece harita + hotspot + tooltip
 │   ├── interior.css         ← Sadece iç mekan + sprite maskeleri

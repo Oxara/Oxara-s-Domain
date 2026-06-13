@@ -3,7 +3,7 @@
 
    Bileşen sırası:
      1. tokens      — CSS değişkenleri (renkler, font, z-index, süreler)
-     2. base        — Reset, body, cursor
+     2. base        — Reset, body
      3. title-screen— Giriş ekranı parallax katmanları
      4. map         — Dünya haritası, hotspot'lar, tooltip
      5. interior    — İç mekan sahne, sprite maskeleri, dialog

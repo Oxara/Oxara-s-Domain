@@ -66,7 +66,7 @@
 .logo-title {
     font-family: var(--font-pixel);
     color: var(--color-text-primary);
-    font-size: 3rem;
+    font-size: 10rem;
     text-shadow: 4px 4px 0px var(--color-bg-base), 0 0 15px var(--color-glow-cyan);
     margin-bottom: 20px;
 }
@@ -75,7 +75,7 @@
 .blink-start {
     font-family: var(--font-pixel);
     color: var(--color-text-accent);
-    font-size: 1rem;
+    font-size: 4rem;
     animation: blinker 1.5s linear infinite;
     text-shadow: 2px 2px 0px var(--color-bg-base);
 }

@@ -23,8 +23,9 @@
     --color-glow-amber: rgba(255, 200, 80, 0.8);
 
     /* --- Tipografi --- */
-    --font-pixel:  'Press Start 2P', cursive;
+    --font-2P:  'Press Start 2P', cursive;
     --font-mono:   'VT323', monospace;
+    --font-pixel:   "Handjet", sans-serif;
 
     /* --- Z-index katmanları --- */
     --z-bg:         1;
@@ -44,8 +45,4 @@
     --dur-normal: 0.3s;
     --dur-slow:   0.5s;
     --dur-portal: 1.0s;
-
-    /* --- Cursor --- */
-    --cursor-idle:    url('../Assets/Cursor/gauntlet-idle.png') 66 7, default;
-    --cursor-pointer: url('../Assets/Cursor/gauntlet-pointer.png') 89 8, pointer;
 }

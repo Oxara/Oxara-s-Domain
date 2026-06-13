@@ -107,6 +107,9 @@
     font-family: var(--font-pixel);
     color: white;
     z-index: var(--z-dialog);
+    pointer-events: none;
+    user-select: none;
+    font-size: 3rem;
 }
 
 /* --- Kapatma butonu --- */
@@ -115,10 +118,9 @@
     padding: 20px;
     top: 40px;
     right: 50px;
-    font-family: var(--font-pixel);
+    font-family: var(--font-2P);
     color: var(--color-text-primary);
     font-size: 2rem;
-    cursor: var(--cursor-idle);
     z-index: var(--z-interior);
     text-shadow: 3px 3px 0px #000;
     transition:
@@ -129,5 +131,5 @@
 .close-btn:hover {
     color: var(--color-text-warn);
     transform: scale(1.1);
-    cursor: var(--cursor-pointer);
+    cursor: pointer;
 }
