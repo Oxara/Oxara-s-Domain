@@ -45,7 +45,7 @@
 
 .portal-exit-line1 {
     font-family: var(--font-mono);
-    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-size: clamp(4rem, 3vw, 6rem);
     color: #a07040;
     margin: 0;
     letter-spacing: 0.08em;
@@ -53,7 +53,7 @@
 
 .portal-exit-line2 {
     font-family: var(--font-pixel);
-    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    font-size: clamp(3rem, 2vw, 5rem);
     color: #e0c070;
     margin: 0;
     text-shadow:
@@ -69,8 +69,8 @@
 
 .portal-exit-line3 {
     font-family: var(--font-pixel);
-    font-size: clamp(0.5rem, 1.2vw, 0.75rem);
-    color: #8855cc;
+    font-size: clamp(2rem, 1.2vw, 3rem);
+    color: #cab1eb;
     margin: 0;
     letter-spacing: 0.15em;
     animation: blinker 0.8s linear infinite;
